@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الشاملة — بطاقات</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
+
+:root {
+    --radius-card: 30px;
+    --radius-badge: 14px;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.theme-vivid {
+    --bg-body: #eef1f7;
+    --text-main: #14141a;
+    --text-muted: #2c2f38;
+    --page-bg: #f7f9fd;
+    --page-outline: rgba(0, 0, 0, 0.08);
+    --shatb-accent: #D31E49;
+    --shatb-card: linear-gradient(148deg, #fffafc 0%, #ffe9f0 46%, #ffd6e3 100%);
+    --shatb-border: rgba(211, 30, 73, 0.25);
+    --shatb-badge-bg: #D31E49;
+    --shatb-badge-fg: #ffffff;
+    --shatb-glow: rgba(211, 30, 73, 0.12);
+    --shatb-wm: rgba(211, 30, 73, 0.30);
+    --ohda-accent: #1547D6;
+    --ohda-card: linear-gradient(148deg, #fbfcff 0%, #ebf1ff 46%, #d7e4ff 100%);
+    --ohda-border: rgba(21, 71, 214, 0.22);
+    --ohda-badge-bg: #1547D6;
+    --ohda-badge-fg: #ffffff;
+    --ohda-glow: rgba(21, 71, 214, 0.11);
+    --ohda-wm: rgba(21, 71, 214, 0.30);
+    --panel-bg: #ffffff;
+    --panel-ink: #14141a;
+    --panel-muted: #6b6f7a;
+    --panel-line: rgba(0,0,0,0.08);
+    --panel-field: #f4f5f9;
+    --panel-accent: #1547D6;
+}
+
+body.theme-air {
+    --bg-body: #f4f4f8;
+    --text-main: #14141a;
+    --text-muted: #333740;
+    --page-bg: #ffffff;
+    --page-outline: rgba(0, 0, 0, 0.06);
+    --shatb-accent: #E5484D;
+    --shatb-card: linear-gradient(148deg, #ffffff 0%, #fff5f6 46%, #ffe9ec 100%);
+    --shatb-border: rgba(229, 72, 77, 0.15);
+    --shatb-badge-bg: #E5484D;
+    --shatb-badge-fg: #ffffff;
+    --shatb-glow: rgba(229, 72, 77, 0.08);
+    --shatb-wm: rgba(229, 72, 77, 0.28);
+    --ohda-accent: #3E63DD;
+    --ohda-card: linear-gradient(148deg, #ffffff 0%, #f3f7ff 46%, #e3edff 100%);
+    --ohda-border: rgba(62, 99, 221, 0.15);
+    --ohda-badge-bg: #3E63DD;
+    --ohda-badge-fg: #ffffff;
+    --ohda-glow: rgba(62, 99, 221, 0.08);
+    --ohda-wm: rgba(62, 99, 221, 0.28);
+    --panel-bg: #ffffff;
+    --panel-ink: #14141a;
+    --panel-muted: #6b6f7a;
+    --panel-line: rgba(0,0,0,0.07);
+    --panel-field: #f6f6fa;
+    --panel-accent: #3E63DD;
+}
+
+body.theme-dusk {
+    --bg-body: #e4e0da;
+    --text-main: #14120f;
+    --text-muted: #2c2a25;
+    --page-bg: #edeae4;
+    --page-outline: rgba(0, 0, 0, 0.10);
+    --shatb-accent: #A82645;
+    --shatb-card: linear-gradient(148deg, #fdf8f9 0%, #f4e6ed 50%, #e9d4de 100%);
+    --shatb-border: rgba(168, 38, 69, 0.20);
+    --shatb-badge-bg: #A82645;
+    --shatb-badge-fg: #ffffff;
+    --shatb-glow: rgba(168, 38, 69, 0.10);
+    --shatb-wm: rgba(168, 38, 69, 0.30);
+    --ohda-accent: #183F8A;
+    --ohda-card: linear-gradient(148deg, #f5f7fd 0%, #e3eaf8 50%, #d2def4 100%);
+    --ohda-border: rgba(24, 63, 138, 0.20);
+    --ohda-badge-bg: #183F8A;
+    --ohda-badge-fg: #ffffff;
+    --ohda-glow: rgba(24, 63, 138, 0.10);
+    --ohda-wm: rgba(24, 63, 138, 0.30);
+    --panel-bg: #f7f5f1;
+    --panel-ink: #14120f;
+    --panel-muted: #6b665c;
+    --panel-line: rgba(0,0,0,0.09);
+    --panel-field: #ece8e1;
+    --panel-accent: #183F8A;
+}
+
+body.theme-terra {
+    --bg-body: #ede3d5;
+    --text-main: #241c14;
+    --text-muted: #4a3d2f;
+    --page-bg: #f8f1e6;
+    --page-outline: rgba(70, 45, 20, 0.12);
+    --shatb-accent: #BE5432;
+    --shatb-card: linear-gradient(148deg, #fdf6ee 0%, #f7e3d3 48%, #f0d0b7 100%);
+    --shatb-border: rgba(190, 84, 50, 0.25);
+    --shatb-badge-bg: #BE5432;
+    --shatb-badge-fg: #fff8f2;
+    --shatb-glow: rgba(190, 84, 50, 0.14);
+    --shatb-wm: rgba(190, 84, 50, 0.32);
+    --ohda-accent: #2A6F63;
+    --ohda-card: linear-gradient(148deg, #f4faf8 0%, #e0efea 48%, #cbe2da 100%);
+    --ohda-border: rgba(42, 111, 99, 0.24);
+    --ohda-badge-bg: #2A6F63;
+    --ohda-badge-fg: #f6fbf9;
+    --ohda-glow: rgba(42, 111, 99, 0.13);
+    --ohda-wm: rgba(42, 111, 99, 0.32);
+    --panel-bg: #fbf6ee;
+    --panel-ink: #241c14;
+    --panel-muted: #6f6152;
+    --panel-line: rgba(70,45,20,0.12);
+    --panel-field: #f1e8da;
+    --panel-accent: #BE5432;
+}
+
+body.theme-noir {
+    --bg-body: #1a181d;
+    --text-main: #f4efe6;
+    --text-muted: #c7c0b5;
+    --page-bg: #221f26;
+    --page-outline: rgba(255, 255, 255, 0.08);
+    --shatb-accent: #E7A6B8;
+    --shatb-card: linear-gradient(148deg, #2c2530 0%, #35232c 48%, #402634 100%);
+    --shatb-border: rgba(231, 166, 184, 0.28);
+    --shatb-badge-bg: #E7A6B8;
+    --shatb-badge-fg: #241820;
+    --shatb-glow: rgba(231, 166, 184, 0.10);
+    --shatb-wm: rgba(231, 166, 184, 0.24);
+    --ohda-accent: #9FB9E8;
+    --ohda-card: linear-gradient(148deg, #202430 0%, #1e2938 48%, #1a2c40 100%);
+    --ohda-border: rgba(159, 185, 232, 0.28);
+    --ohda-badge-bg: #9FB9E8;
+    --ohda-badge-fg: #171d28;
+    --ohda-glow: rgba(159, 185, 232, 0.10);
+    --ohda-wm: rgba(159, 185, 232, 0.24);
+    --panel-bg: #221f26;
+    --panel-ink: #f4efe6;
+    --panel-muted: #a29b90;
+    --panel-line: rgba(255,255,255,0.09);
+    --panel-field: #2a2730;
+    --panel-accent: #9FB9E8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "IBM Plex Sans Arabic", -apple-system, BlinkMacSystemFont, "SF Pro Arabic", "Segoe UI", sans-serif;
+    background: var(--bg-body);
+    color: var(--text-main);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    transition: background 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+
+.theme-switcher {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 5px;
+    border-radius: 100px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04);
+    display: flex;
+    gap: 3px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+body.theme-noir .theme-switcher {
+    background: rgba(40,37,45,0.85);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.theme-indicator {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+    width: 0;
+    border-radius: 100px;
+    background: #ffffff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1), 0 0 0 0.5px rgba(0,0,0,0.03);
+    transition: transform 0.45s var(--ease-out), width 0.45s var(--ease-out);
+    z-index: 0;
+}
+
+body.theme-noir .theme-indicator {
+    background: #33303a;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.3), 0 0 0 0.5px rgba(255,255,255,0.04);
+}
+
+.theme-btn {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s var(--ease-out);
+    letter-spacing: -0.1px;
+}
+
+.theme-btn:hover { color: var(--text-main); }
+.theme-btn:focus-visible {
+    outline: 2px solid var(--panel-accent);
+    outline-offset: 2px;
+}
+.theme-btn.active { color: var(--text-main); }
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5mm;
+    width: 297mm;
+    height: 210mm;
+    padding: 6mm;
+    background: var(--page-bg);
+    border: 1px solid var(--page-outline);
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(20, 29, 51, 0.08);
+    transition: background 0.3s var(--ease-out);
+}
+
+.card {
+    border-radius: var(--radius-card);
+    padding: 11mm 13mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.card.shatb {
+    background: var(--shatb-card);
+    border: 1px solid var(--shatb-border);
+    box-shadow: 0 10px 28px var(--shatb-glow), inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.card.ohda {
+    background: var(--ohda-card);
+    border: 1px solid var(--ohda-border);
+    box-shadow: 0 10px 28px var(--ohda-glow), inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.wm {
+    position: absolute;
+    bottom: -34px;
+    left: -34px;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amiri', serif;
+    font-size: 50pt;
+    font-weight: 700;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    line-height: 1;
+    padding-bottom: 6px;
+}
+
+.card.shatb .wm { color: var(--shatb-wm); border: 1.5px solid var(--shatb-wm); }
+.card.ohda .wm { color: var(--ohda-wm); border: 1.5px solid var(--ohda-wm); }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 8px;
+}
+
+.card.shatb .header { border-bottom: 1px solid var(--shatb-border); }
+.card.ohda .header { border-bottom: 1px solid var(--ohda-border); }
+
+.org-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.org-item {
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--text-muted);
+    line-height: 1.6;
+    letter-spacing: 0.1px;
+}
+
+.header-id {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pharmacy-name {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.2px;
+}
+
+.pharmacy-number {
+    font-size: 13pt;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-badge);
+    flex-shrink: 0;
+    letter-spacing: -0.3px;
+}
+
+.card.shatb .pharmacy-number {
+    background: var(--shatb-badge-bg);
+    color: var(--shatb-badge-fg);
+    box-shadow: 0 4px 12px var(--shatb-glow);
+}
+
+.card.ohda .pharmacy-number {
+    background: var(--ohda-badge-bg);
+    color: var(--ohda-badge-fg);
+    box-shadow: 0 4px 12px var(--ohda-glow);
+}
+
+.center-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.main-text {
+    font-size: 44pt;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    text-align: center;
+    line-height: 1;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-line {
+    display: none;
+    width: 44px;
+    height: 2px;
+    border-radius: 4px;
+}
+
+.card.shatb .footer-line {
+    background: linear-gradient(to right, transparent, var(--shatb-accent) 28%, var(--shatb-accent) 72%, transparent);
+    opacity: 0.5;
+}
+
+.card.ohda .footer-line {
+    background: linear-gradient(to right, transparent, var(--ohda-accent) 28%, var(--ohda-accent) 72%, transparent);
+    opacity: 0.5;
+}
+
+.has-line .footer-line { display: block; }
+
+.footer-text {
+    font-size: 8.5pt;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+    letter-spacing: -0.1px;
+}
+
+.fiscal-year {
+    font-size: 7.1pt;
+    font-weight: 600;
+    color: var(--text-muted);
+    opacity: 0.95;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.fab {
+    position: fixed;
+    bottom: 26px;
+    left: 26px;
+    z-index: 210;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: none;
+    background: var(--panel-accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.22), 0 2px 6px rgba(0,0,0,0.12);
+    transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+.fab:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 14px 30px rgba(0,0,0,0.26); }
+.fab svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 1.8; }
+
+.btn-print {
+    position: fixed;
+    bottom: 26px;
+    left: 94px;
+    z-index: 210;
+    height: 54px;
+    padding: 0 22px;
+    border: none;
+    border-radius: 100px;
+    background: var(--panel-bg);
+    color: var(--panel-ink);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 9.5pt;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.14), 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid var(--panel-line);
+    transition: transform 0.25s var(--ease-out);
+}
+.btn-print:hover { transform: translateY(-2px); }
+
+.panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 380px;
+    max-width: 92vw;
+    background: var(--panel-bg);
+    color: var(--panel-ink);
+    z-index: 300;
+    box-shadow: -18px 0 50px rgba(0,0,0,0.18);
+    transform: translateX(100%);
+    transition: transform 0.4s var(--ease-out);
+    display: flex;
+    flex-direction: column;
+}
+.panel.open { transform: translateX(0); }
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--panel-line);
+}
+.panel-title { font-size: 12.5pt; font-weight: 700; }
+.panel-close {
+    width: 34px; height: 34px; border-radius: 50%; border: none;
+    background: var(--panel-field); color: var(--panel-ink);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; transition: background 0.2s;
+}
+.panel-close:hover { background: var(--panel-line); }
+
+.panel-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 22px 100px;
+}
+
+.panel-section { margin-bottom: 26px; }
+.panel-section-title {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--panel-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+}
+
+.field { margin-bottom: 10px; }
+.field label {
+    display: block;
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--panel-muted);
+    margin-bottom: 5px;
+}
+.field input[type="text"], .field input[type="number"] {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--panel-line);
+    background: var(--panel-field);
+    color: var(--panel-ink);
+    font-family: inherit;
+    font-size: 9.5pt;
+    outline: none;
+    transition: border-color 0.15s;
+}
+.field input:focus { border-color: var(--panel-accent); }
+
+.card-row {
+    border: 1px solid var(--panel-line);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 12px;
+    background: var(--panel-field);
+}
+.card-row-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.type-toggle {
+    display: flex;
+    border-radius: 100px;
+    background: rgba(0,0,0,0.06);
+    padding: 3px;
+    gap: 2px;
+}
+.type-toggle button {
+    border: none;
+    background: transparent;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 7.8pt;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--panel-muted);
+}
+.type-toggle button.active.shatb-a { background: #D31E49; color: #fff; }
+.type-toggle button.active.ohda-a { background: #1547D6; color: #fff; }
+
+.row-actions { display: flex; gap: 4px; }
+.row-actions button {
+    width: 26px; height: 26px; border-radius: 8px; border: none;
+    background: transparent; color: var(--panel-muted); cursor: pointer;
+    font-size: 11px; display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+}
+.row-actions button:hover { background: rgba(0,0,0,0.08); }
+
+.check-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--panel-muted);
+}
+.check-row input { accent-color: var(--panel-accent); }
+
+.add-card-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1.5px dashed var(--panel-line);
+    background: transparent;
+    color: var(--panel-muted);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 9pt;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.add-card-btn:hover { border-color: var(--panel-accent); color: var(--panel-accent); background: rgba(0,0,0,0.02); }
+
+.sel-check { margin-left: 4px; accent-color: var(--panel-accent); }
+.card-row-left { display: flex; align-items: center; gap: 8px; }
+
+.bulk-box {
+    border: 1px solid var(--panel-line);
+    border-radius: 16px;
+    padding: 14px;
+    background: var(--panel-field);
+}
+.bulk-select-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.bulk-select-actions button {
+    flex: 1;
+    padding: 7px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--panel-line);
+    background: var(--panel-bg);
+    color: var(--panel-ink);
+    font-family: inherit;
+    font-size: 7.8pt;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.bulk-select-actions button:hover { background: var(--panel-line); }
+.bulk-count {
+    font-size: 7.8pt;
+    font-weight: 700;
+    color: var(--panel-accent);
+    margin-bottom: 12px;
+}
+.field select {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--panel-line);
+    background: var(--panel-bg);
+    color: var(--panel-ink);
+    font-family: inherit;
+    font-size: 9.5pt;
+    outline: none;
+    cursor: pointer;
+}
+.bulk-apply-btn {
+    width: 100%;
+    padding: 11px;
+    border-radius: 12px;
+    border: none;
+    background: var(--panel-accent);
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 9pt;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: filter 0.15s;
+}
+.bulk-apply-btn:hover { filter: brightness(1.08); }
+
+@media print {
+    @page { size: 297mm 210mm; margin: 0; }
+    html, body { width: 297mm; height: auto; margin: 0; padding: 0; }
+    body { background: #ffffff; gap: 0; display: block; }
+    .no-print { display: none !important; }
+    .page {
+        width: 297mm; height: 210mm; margin: 0; border: 0; border-radius: 0;
+        box-shadow: none; page-break-after: always; break-after: page;
+    }
+    .page:last-child { page-break-after: auto; break-after: auto; }
+    .card { box-shadow: none !important; border: 1px solid rgba(0,0,0,0.12) !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
+</head>
+<body class="theme-vivid">
+
+<div class="theme-switcher no-print">
+<div class="theme-indicator"></div>
+<button class="theme-btn active" onclick="setTheme('theme-vivid', this)">Vivid</button>
+<button class="theme-btn" onclick="setTheme('theme-air', this)">Air</button>
+<button class="theme-btn" onclick="setTheme('theme-dusk', this)">Dusk</button>
+<button class="theme-btn" onclick="setTheme('theme-terra', this)">Terra</button>
+<button class="theme-btn" onclick="setTheme('theme-noir', this)">Noir</button>
+</div>
+
+<button class="fab no-print" id="fabBtn" title="تحرير البيانات">
+<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+</button>
+<button class="btn-print no-print" onclick="window.print()">طباعة</button>
+
+<div class="panel no-print" id="panel">
+<div class="panel-head">
+<div class="panel-title">تحرير البطاقات</div>
+<button class="panel-close" id="panelClose">✕</button>
+</div>
+<div class="panel-body" id="panelBody"></div>
+</div>
+
+<div id="pagesRoot"></div>
+
+<script>
+const state = {
+    org: [
+        "الهيئة العامة للتأمين الصحي",
+        "فرع البحيرة - ادارة المنطقة الثانية",
+        "عيادة دمنهور الشاملة"
+    ],
+    pharmacyName: "صيدلية دمنهور الشاملة",
+    pharmacyNumber: "2",
+    fiscalYear: "عن العام المالي 2026-2027",
+    cards: [
+        { type: "shatb", center: "114 شطب", footer: "نموذج 5 م.ح", hasLine: false, selected: false },
+        { type: "shatb", center: "شطب A", footer: "دفتر 322", hasLine: false, selected: false },
+        { type: "shatb", center: "شطب B", footer: "دفتر 322", hasLine: false, selected: false },
+        { type: "shatb", center: "شطب C", footer: "دفتر 322", hasLine: false, selected: false },
+        { type: "shatb", center: "شطب A", footer: "سجل 4 م.ح", hasLine: false, selected: false },
+        { type: "shatb", center: "شطب B", footer: "سجل 4 م.ح", hasLine: false, selected: false },
+        { type: "shatb", center: "شطب C", footer: "سجل 4 م.ح", hasLine: false, selected: false },
+        { type: "ohda", center: "114 عهدة", footer: "نموذج 5 م.ح", hasLine: false, selected: false },
+        { type: "ohda", center: "عهدة A", footer: "دفتر 322", hasLine: false, selected: false },
+        { type: "ohda", center: "عهدة B", footer: "دفتر 322", hasLine: false, selected: false },
+        { type: "ohda", center: "عهدة C", footer: "دفتر 322", hasLine: false, selected: false },
+        { type: "ohda", center: "عهدة A", footer: "سجل 3 م.ح", hasLine: true, selected: false },
+        { type: "ohda", center: "عهدة B", footer: "سجل 3 م.ح", hasLine: true, selected: false },
+        { type: "ohda", center: "عهدة C", footer: "سجل 3 م.ح", hasLine: true, selected: false }
+    ]
+};
+
+function escapeHTML(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+}
+
+function cardHTML(item) {
+    const wm = item.type === "shatb" ? "ش" : "ع";
+    return `
+    <div class="card ${item.type}">
+        <div class="wm">${wm}</div>
+        <div class="header">
+            <div class="org-stack">
+                ${state.org.map(l => `<div class="org-item">${escapeHTML(l)}</div>`).join("")}
+            </div>
+            <div class="header-id">
+                <div class="pharmacy-name">${escapeHTML(state.pharmacyName)}</div>
+                <div class="pharmacy-number">${escapeHTML(state.pharmacyNumber)}</div>
+            </div>
+        </div>
+        <div class="center-content">
+            <div class="main-text">${escapeHTML(item.center)}</div>
+        </div>
+        <div class="footer-wrapper ${item.hasLine ? "has-line" : ""}">
+            <div class="footer-line"></div>
+            <div class="footer-text">${escapeHTML(item.footer)}</div>
+            <div class="fiscal-year">${escapeHTML(state.fiscalYear)}</div>
+        </div>
+    </div>`;
+}
+
+function renderPages() {
+    const root = document.getElementById('pagesRoot');
+    root.innerHTML = "";
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < state.cards.length; i += 4) {
+        const page = document.createElement("div");
+        page.className = "page";
+        state.cards.slice(i, i + 4).forEach(item => {
+            page.insertAdjacentHTML("beforeend", cardHTML(item));
+        });
+        fragment.appendChild(page);
+    }
+    root.appendChild(fragment);
+}
+
+function renderPanel() {
+    const body = document.getElementById('panelBody');
+    let html = `
+    <div class="panel-section">
+        <div class="panel-section-title">بيانات عامة</div>
+        <div class="field"><label>السطر الأول</label><input type="text" id="orgLine0" value="${escapeHTML(state.org[0])}"></div>
+        <div class="field"><label>السطر الثاني</label><input type="text" id="orgLine1" value="${escapeHTML(state.org[1])}"></div>
+        <div class="field"><label>السطر الثالث</label><input type="text" id="orgLine2" value="${escapeHTML(state.org[2])}"></div>
+        <div class="field"><label>اسم الصيدلية</label><input type="text" id="pharmacyName" value="${escapeHTML(state.pharmacyName)}"></div>
+        <div class="field"><label>رقم الصيدلية</label><input type="text" id="pharmacyNumber" value="${escapeHTML(state.pharmacyNumber)}"></div>
+        <div class="field"><label>العام المالي</label><input type="text" id="fiscalYear" value="${escapeHTML(state.fiscalYear)}"></div>
+    </div>
+    <div class="panel-section">
+        <div class="panel-section-title">تحرير جماعي</div>
+        <div class="bulk-box">
+            <div class="bulk-select-actions">
+                <button id="selectAllBtn" type="button">تحديد الكل</button>
+                <button id="selectNoneBtn" type="button">إلغاء التحديد</button>
+            </div>
+            <div class="bulk-count">${state.cards.filter(c => c.selected).length} بطاقة محددة</div>
+            <div class="field">
+                <label>النوع</label>
+                <select id="bulkType">
+                    <option value="">بدون تغيير</option>
+                    <option value="shatb">شطب</option>
+                    <option value="ohda">عهدة</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>نص أسفل البطاقة</label>
+                <input type="text" id="bulkFooter" placeholder="اتركه فارغاً لعدم التغيير">
+            </div>
+            <div class="field">
+                <label>الخط الفاصل</label>
+                <select id="bulkLine">
+                    <option value="">بدون تغيير</option>
+                    <option value="show">إظهار</option>
+                    <option value="hide">إخفاء</option>
+                </select>
+            </div>
+            <button class="bulk-apply-btn" id="applyBulkBtn">تطبيق على المحدد</button>
+        </div>
+    </div>
+    <div class="panel-section">
+        <div class="panel-section-title">البطاقات (${state.cards.length})</div>
+        <div id="cardRows"></div>
+        <button class="add-card-btn" id="addCardBtn">+ إضافة بطاقة</button>
+    </div>`;
+    body.innerHTML = html;
+
+    const rowsHost = document.getElementById('cardRows');
+    state.cards.forEach((item, idx) => {
+        const row = document.createElement('div');
+        row.className = 'card-row';
+        row.innerHTML = `
+            <div class="card-row-top">
+                <div class="card-row-left">
+                    <input type="checkbox" class="sel-check" data-idx="${idx}" ${item.selected ? 'checked' : ''} title="تحديد للتحرير الجماعي">
+                    <div class="type-toggle">
+                        <button data-idx="${idx}" class="type-btn ${item.type === 'shatb' ? 'active shatb-a' : ''}" data-type="shatb">شطب</button>
+                        <button data-idx="${idx}" class="type-btn ${item.type === 'ohda' ? 'active ohda-a' : ''}" data-type="ohda">عهدة</button>
+                    </div>
+                </div>
+                <div class="row-actions">
+                    <button data-idx="${idx}" class="up-btn" title="أعلى">↑</button>
+                    <button data-idx="${idx}" class="down-btn" title="أسفل">↓</button>
+                    <button data-idx="${idx}" class="del-btn" title="حذف">✕</button>
+                </div>
+            </div>
+            <div class="field"><label>النص المركزي</label><input type="text" class="center-input" data-idx="${idx}" value="${escapeHTML(item.center)}"></div>
+            <div class="field"><label>نص أسفل البطاقة</label><input type="text" class="footer-input" data-idx="${idx}" value="${escapeHTML(item.footer)}"></div>
+            <div class="check-row">
+                <input type="checkbox" class="line-check" data-idx="${idx}" ${item.hasLine ? 'checked' : ''}>
+                <span>إظهار خط فاصل</span>
+            </div>
+        `;
+        rowsHost.appendChild(row);
+    });
+
+    document.getElementById('orgLine0').addEventListener('input', e => { state.org[0] = e.target.value; renderPages(); });
+    document.getElementById('orgLine1').addEventListener('input', e => { state.org[1] = e.target.value; renderPages(); });
+    document.getElementById('orgLine2').addEventListener('input', e => { state.org[2] = e.target.value; renderPages(); });
+    document.getElementById('pharmacyName').addEventListener('input', e => { state.pharmacyName = e.target.value; renderPages(); });
+    document.getElementById('pharmacyNumber').addEventListener('input', e => { state.pharmacyNumber = e.target.value; renderPages(); });
+    document.getElementById('fiscalYear').addEventListener('input', e => { state.fiscalYear = e.target.value; renderPages(); });
+
+    rowsHost.querySelectorAll('.type-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const idx = +btn.dataset.idx;
+            state.cards[idx].type = btn.dataset.type;
+            renderPanel();
+            renderPages();
+        });
+    });
+    rowsHost.querySelectorAll('.center-input').forEach(inp => {
+        inp.addEventListener('input', () => { state.cards[+inp.dataset.idx].center = inp.value; renderPages(); });
+    });
+    rowsHost.querySelectorAll('.footer-input').forEach(inp => {
+        inp.addEventListener('input', () => { state.cards[+inp.dataset.idx].footer = inp.value; renderPages(); });
+    });
+    rowsHost.querySelectorAll('.line-check').forEach(inp => {
+        inp.addEventListener('change', () => { state.cards[+inp.dataset.idx].hasLine = inp.checked; renderPages(); });
+    });
+    rowsHost.querySelectorAll('.up-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const idx = +btn.dataset.idx;
+            if (idx === 0) return;
+            [state.cards[idx - 1], state.cards[idx]] = [state.cards[idx], state.cards[idx - 1]];
+            renderPanel();
+            renderPages();
+        });
+    });
+    rowsHost.querySelectorAll('.down-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const idx = +btn.dataset.idx;
+            if (idx === state.cards.length - 1) return;
+            [state.cards[idx + 1], state.cards[idx]] = [state.cards[idx], state.cards[idx + 1]];
+            renderPanel();
+            renderPages();
+        });
+    });
+    rowsHost.querySelectorAll('.del-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const idx = +btn.dataset.idx;
+            state.cards.splice(idx, 1);
+            renderPanel();
+            renderPages();
+        });
+    });
+
+    rowsHost.querySelectorAll('.sel-check').forEach(inp => {
+        inp.addEventListener('change', () => {
+            state.cards[+inp.dataset.idx].selected = inp.checked;
+            renderPanel();
+        });
+    });
+
+    document.getElementById('addCardBtn').addEventListener('click', () => {
+        state.cards.push({ type: "shatb", center: "بطاقة جديدة", footer: "", hasLine: false, selected: false });
+        renderPanel();
+        renderPages();
+    });
+
+    document.getElementById('selectAllBtn').addEventListener('click', () => {
+        state.cards.forEach(c => c.selected = true);
+        renderPanel();
+    });
+    document.getElementById('selectNoneBtn').addEventListener('click', () => {
+        state.cards.forEach(c => c.selected = false);
+        renderPanel();
+    });
+    document.getElementById('applyBulkBtn').addEventListener('click', () => {
+        const type = document.getElementById('bulkType').value;
+        const footer = document.getElementById('bulkFooter').value;
+        const line = document.getElementById('bulkLine').value;
+        const targets = state.cards.filter(c => c.selected);
+        if (targets.length === 0) return;
+        targets.forEach(c => {
+            if (type) c.type = type;
+            if (footer) c.footer = footer;
+            if (line === 'show') c.hasLine = true;
+            if (line === 'hide') c.hasLine = false;
+        });
+        renderPanel();
+        renderPages();
+    });
+}
+
+function moveIndicator(btn) {
+    const indicator = document.querySelector('.theme-indicator');
+    const parentRect = btn.parentElement.getBoundingClientRect();
+    const rect = btn.getBoundingClientRect();
+    indicator.style.width = rect.width + 'px';
+    indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+}
+
+function setTheme(n, b) {
+    document.body.className = n;
+    document.querySelectorAll('.theme-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    moveIndicator(b);
+}
+
+window.addEventListener('load', () => moveIndicator(document.querySelector('.theme-btn.active')));
+window.addEventListener('resize', () => moveIndicator(document.querySelector('.theme-btn.active')));
+
+document.getElementById('fabBtn').addEventListener('click', () => {
+    document.getElementById('panel').classList.add('open');
+});
+document.getElementById('panelClose').addEventListener('click', () => {
+    document.getElementById('panel').classList.remove('open');
+});
+
+renderPages();
+renderPanel();
+</script>
+</body>
+</html>
