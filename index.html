@@ -5,152 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الشاملة — بطاقات</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&family=El+Messiri:wght@400;500;600;700&display=swap');
 
 :root {
-    --radius-card: 30px;
+    --radius-card: 28px;
     --radius-badge: 14px;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --font-display: 'Amiri', serif;
 }
 
-body.theme-vivid {
-    --bg-body: #eef1f7;
-    --text-main: #14141a;
-    --text-muted: #2c2f38;
-    --page-bg: #f7f9fd;
-    --page-outline: rgba(0, 0, 0, 0.08);
-    --shatb-accent: #D31E49;
-    --shatb-card: linear-gradient(148deg, #fffafc 0%, #ffe9f0 46%, #ffd6e3 100%);
-    --shatb-border: rgba(211, 30, 73, 0.25);
-    --shatb-badge-bg: #D31E49;
-    --shatb-badge-fg: #ffffff;
-    --shatb-glow: rgba(211, 30, 73, 0.12);
-    --shatb-wm: rgba(211, 30, 73, 0.30);
-    --ohda-accent: #1547D6;
-    --ohda-card: linear-gradient(148deg, #fbfcff 0%, #ebf1ff 46%, #d7e4ff 100%);
-    --ohda-border: rgba(21, 71, 214, 0.22);
-    --ohda-badge-bg: #1547D6;
-    --ohda-badge-fg: #ffffff;
-    --ohda-glow: rgba(21, 71, 214, 0.11);
-    --ohda-wm: rgba(21, 71, 214, 0.30);
-    --panel-bg: #ffffff;
-    --panel-ink: #14141a;
-    --panel-muted: #6b6f7a;
-    --panel-line: rgba(0,0,0,0.08);
-    --panel-field: #f4f5f9;
-    --panel-accent: #1547D6;
+body.theme-ledger {
+    --radius-card: 18px;
+    --radius-badge: 8px;
+    --font-display: 'Amiri', serif;
+    --bg-body: #ECE6D8;
+    --text-main: #241C14;
+    --text-muted: #4A4030;
+    --page-bg: #F7F2E6;
+    --page-outline: rgba(74, 64, 48, 0.16);
+    --shatb-accent: #7A2331;
+    --shatb-card: linear-gradient(155deg, #FCF8EE 0%, #F5EBDA 100%);
+    --shatb-border: rgba(122, 35, 49, 0.35);
+    --shatb-badge-bg: #7A2331;
+    --shatb-badge-fg: #F7F0DF;
+    --shatb-glow: rgba(122, 35, 49, 0.12);
+    --shatb-wm: rgba(122, 35, 49, 0.38);
+    --ohda-accent: #1E3A5F;
+    --ohda-card: linear-gradient(155deg, #FCF8EE 0%, #F5EBDA 100%);
+    --ohda-border: rgba(30, 58, 95, 0.32);
+    --ohda-badge-bg: #1E3A5F;
+    --ohda-badge-fg: #F0F4F8;
+    --ohda-glow: rgba(30, 58, 95, 0.12);
+    --ohda-wm: rgba(30, 58, 95, 0.36);
+    --panel-bg: #FBF6EA;
+    --panel-ink: #241C14;
+    --panel-muted: #7A6E58;
+    --panel-line: rgba(74, 64, 48, 0.16);
+    --panel-field: #F2E9D8;
+    --panel-accent: #7A2331;
 }
 
-body.theme-air {
-    --bg-body: #f4f4f8;
-    --text-main: #14141a;
-    --text-muted: #333740;
-    --page-bg: #ffffff;
-    --page-outline: rgba(0, 0, 0, 0.06);
-    --shatb-accent: #E5484D;
-    --shatb-card: linear-gradient(148deg, #ffffff 0%, #fff5f6 46%, #ffe9ec 100%);
-    --shatb-border: rgba(229, 72, 77, 0.15);
-    --shatb-badge-bg: #E5484D;
-    --shatb-badge-fg: #ffffff;
-    --shatb-glow: rgba(229, 72, 77, 0.08);
-    --shatb-wm: rgba(229, 72, 77, 0.28);
-    --ohda-accent: #3E63DD;
-    --ohda-card: linear-gradient(148deg, #ffffff 0%, #f3f7ff 46%, #e3edff 100%);
-    --ohda-border: rgba(62, 99, 221, 0.15);
-    --ohda-badge-bg: #3E63DD;
-    --ohda-badge-fg: #ffffff;
-    --ohda-glow: rgba(62, 99, 221, 0.08);
-    --ohda-wm: rgba(62, 99, 221, 0.28);
-    --panel-bg: #ffffff;
-    --panel-ink: #14141a;
-    --panel-muted: #6b6f7a;
-    --panel-line: rgba(0,0,0,0.07);
-    --panel-field: #f6f6fa;
-    --panel-accent: #3E63DD;
+body.theme-seal {
+    --radius-card: 24px;
+    --radius-badge: 50%;
+    --font-display: 'Reem Kufi', sans-serif;
+    --bg-body: #10131A;
+    --text-main: #F2EFE8;
+    --text-muted: #B9B2A4;
+    --page-bg: #171B24;
+    --page-outline: rgba(255, 255, 255, 0.07);
+    --shatb-accent: #C9A227;
+    --shatb-card: linear-gradient(160deg, #1C2029 0%, #241C18 55%, #2E2015 100%);
+    --shatb-border: rgba(201, 162, 39, 0.35);
+    --shatb-badge-bg: #C9A227;
+    --shatb-badge-fg: #171308;
+    --shatb-glow: rgba(201, 162, 39, 0.18);
+    --shatb-wm: rgba(201, 162, 39, 0.45);
+    --ohda-accent: #2F9E82;
+    --ohda-card: linear-gradient(160deg, #1A1F27 0%, #16241F 55%, #123028 100%);
+    --ohda-border: rgba(47, 158, 130, 0.32);
+    --ohda-badge-bg: #2F9E82;
+    --ohda-badge-fg: #08201A;
+    --ohda-glow: rgba(47, 158, 130, 0.16);
+    --ohda-wm: rgba(47, 158, 130, 0.42);
+    --panel-bg: #171B24;
+    --panel-ink: #F2EFE8;
+    --panel-muted: #8B8577;
+    --panel-line: rgba(255, 255, 255, 0.09);
+    --panel-field: #1E232C;
+    --panel-accent: #C9A227;
 }
 
-body.theme-dusk {
-    --bg-body: #e4e0da;
-    --text-main: #14120f;
-    --text-muted: #2c2a25;
-    --page-bg: #edeae4;
-    --page-outline: rgba(0, 0, 0, 0.10);
-    --shatb-accent: #A82645;
-    --shatb-card: linear-gradient(148deg, #fdf8f9 0%, #f4e6ed 50%, #e9d4de 100%);
-    --shatb-border: rgba(168, 38, 69, 0.20);
-    --shatb-badge-bg: #A82645;
-    --shatb-badge-fg: #ffffff;
-    --shatb-glow: rgba(168, 38, 69, 0.10);
-    --shatb-wm: rgba(168, 38, 69, 0.30);
-    --ohda-accent: #183F8A;
-    --ohda-card: linear-gradient(148deg, #f5f7fd 0%, #e3eaf8 50%, #d2def4 100%);
-    --ohda-border: rgba(24, 63, 138, 0.20);
-    --ohda-badge-bg: #183F8A;
-    --ohda-badge-fg: #ffffff;
-    --ohda-glow: rgba(24, 63, 138, 0.10);
-    --ohda-wm: rgba(24, 63, 138, 0.30);
-    --panel-bg: #f7f5f1;
-    --panel-ink: #14120f;
-    --panel-muted: #6b665c;
-    --panel-line: rgba(0,0,0,0.09);
-    --panel-field: #ece8e1;
-    --panel-accent: #183F8A;
-}
-
-body.theme-terra {
-    --bg-body: #ede3d5;
-    --text-main: #241c14;
-    --text-muted: #4a3d2f;
-    --page-bg: #f8f1e6;
-    --page-outline: rgba(70, 45, 20, 0.12);
+body.theme-desert {
+    --radius-card: 32px;
+    --radius-badge: 18px;
+    --font-display: 'Cairo', sans-serif;
+    --bg-body: #EAD9C2;
+    --text-main: #2C2013;
+    --text-muted: #5C4B36;
+    --page-bg: #F6EBDA;
+    --page-outline: rgba(70, 45, 20, 0.13);
     --shatb-accent: #BE5432;
-    --shatb-card: linear-gradient(148deg, #fdf6ee 0%, #f7e3d3 48%, #f0d0b7 100%);
-    --shatb-border: rgba(190, 84, 50, 0.25);
+    --shatb-card: linear-gradient(150deg, #FBF3E7 0%, #F3DEC9 50%, #EBC9A9 100%);
+    --shatb-border: rgba(190, 84, 50, 0.28);
     --shatb-badge-bg: #BE5432;
-    --shatb-badge-fg: #fff8f2;
-    --shatb-glow: rgba(190, 84, 50, 0.14);
-    --shatb-wm: rgba(190, 84, 50, 0.32);
+    --shatb-badge-fg: #FBF3E7;
+    --shatb-glow: rgba(190, 84, 50, 0.16);
+    --shatb-wm: rgba(190, 84, 50, 0.38);
     --ohda-accent: #2A6F63;
-    --ohda-card: linear-gradient(148deg, #f4faf8 0%, #e0efea 48%, #cbe2da 100%);
-    --ohda-border: rgba(42, 111, 99, 0.24);
+    --ohda-card: linear-gradient(150deg, #F3FAF7 0%, #DFEFE9 50%, #C9E1D8 100%);
+    --ohda-border: rgba(42, 111, 99, 0.26);
     --ohda-badge-bg: #2A6F63;
-    --ohda-badge-fg: #f6fbf9;
-    --ohda-glow: rgba(42, 111, 99, 0.13);
-    --ohda-wm: rgba(42, 111, 99, 0.32);
-    --panel-bg: #fbf6ee;
-    --panel-ink: #241c14;
-    --panel-muted: #6f6152;
-    --panel-line: rgba(70,45,20,0.12);
-    --panel-field: #f1e8da;
+    --ohda-badge-fg: #F3FAF7;
+    --ohda-glow: rgba(42, 111, 99, 0.15);
+    --ohda-wm: rgba(42, 111, 99, 0.38);
+    --panel-bg: #FBF6EE;
+    --panel-ink: #2C2013;
+    --panel-muted: #7A6A55;
+    --panel-line: rgba(70, 45, 20, 0.15);
+    --panel-field: #F1E5D4;
     --panel-accent: #BE5432;
 }
 
-body.theme-noir {
-    --bg-body: #1a181d;
-    --text-main: #f4efe6;
-    --text-muted: #c7c0b5;
-    --page-bg: #221f26;
-    --page-outline: rgba(255, 255, 255, 0.08);
-    --shatb-accent: #E7A6B8;
-    --shatb-card: linear-gradient(148deg, #2c2530 0%, #35232c 48%, #402634 100%);
-    --shatb-border: rgba(231, 166, 184, 0.28);
-    --shatb-badge-bg: #E7A6B8;
-    --shatb-badge-fg: #241820;
-    --shatb-glow: rgba(231, 166, 184, 0.10);
-    --shatb-wm: rgba(231, 166, 184, 0.24);
-    --ohda-accent: #9FB9E8;
-    --ohda-card: linear-gradient(148deg, #202430 0%, #1e2938 48%, #1a2c40 100%);
-    --ohda-border: rgba(159, 185, 232, 0.28);
-    --ohda-badge-bg: #9FB9E8;
-    --ohda-badge-fg: #171d28;
-    --ohda-glow: rgba(159, 185, 232, 0.10);
-    --ohda-wm: rgba(159, 185, 232, 0.24);
-    --panel-bg: #221f26;
-    --panel-ink: #f4efe6;
-    --panel-muted: #a29b90;
-    --panel-line: rgba(255,255,255,0.09);
-    --panel-field: #2a2730;
-    --panel-accent: #9FB9E8;
+body.theme-pearl {
+    --radius-card: 26px;
+    --radius-badge: 50%;
+    --font-display: 'El Messiri', serif;
+    --bg-body: #F1F1F5;
+    --text-main: #14141A;
+    --text-muted: #5B5E68;
+    --page-bg: #FFFFFF;
+    --page-outline: rgba(0, 0, 0, 0.05);
+    --shatb-accent: #C33A5D;
+    --shatb-card: linear-gradient(150deg, #FFFFFF 0%, #FBF1F4 55%, #F7E4EA 100%);
+    --shatb-border: rgba(195, 58, 93, 0.17);
+    --shatb-badge-bg: #C33A5D;
+    --shatb-badge-fg: #FFFFFF;
+    --shatb-glow: rgba(195, 58, 93, 0.08);
+    --shatb-wm: rgba(195, 58, 93, 0.24);
+    --ohda-accent: #2F4FBE;
+    --ohda-card: linear-gradient(150deg, #FFFFFF 0%, #F0F3FC 55%, #E3E9FA 100%);
+    --ohda-border: rgba(47, 79, 190, 0.17);
+    --ohda-badge-bg: #2F4FBE;
+    --ohda-badge-fg: #FFFFFF;
+    --ohda-glow: rgba(47, 79, 190, 0.08);
+    --ohda-wm: rgba(47, 79, 190, 0.24);
+    --panel-bg: #FFFFFF;
+    --panel-ink: #14141A;
+    --panel-muted: #6B6F7A;
+    --panel-line: rgba(0, 0, 0, 0.07);
+    --panel-field: #F5F5F9;
+    --panel-accent: #2F4FBE;
 }
 
 * { box-sizing: border-box; }
@@ -191,8 +176,8 @@ body {
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-body.theme-noir .theme-switcher {
-    background: rgba(40,37,45,0.85);
+body.theme-seal .theme-switcher {
+    background: rgba(30,27,34,0.85);
     border-color: rgba(255,255,255,0.08);
 }
 
@@ -209,8 +194,8 @@ body.theme-noir .theme-switcher {
     z-index: 0;
 }
 
-body.theme-noir .theme-indicator {
-    background: #33303a;
+body.theme-seal .theme-indicator {
+    background: #2B2733;
     box-shadow: 0 1px 8px rgba(0,0,0,0.3), 0 0 0 0.5px rgba(255,255,255,0.04);
 }
 
@@ -252,6 +237,10 @@ body.theme-noir .theme-indicator {
     transition: background 0.3s var(--ease-out);
 }
 
+body.theme-ledger .page {
+    background-image: repeating-linear-gradient(to bottom, transparent 0 27px, rgba(74,64,48,0.06) 27px 28px);
+}
+
 .card {
     border-radius: var(--radius-card);
     padding: 11mm 13mm;
@@ -284,7 +273,7 @@ body.theme-noir .theme-indicator {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Amiri', serif;
+    font-family: var(--font-display), 'Amiri', serif;
     font-size: 50pt;
     font-weight: 700;
     pointer-events: none;
@@ -296,6 +285,15 @@ body.theme-noir .theme-indicator {
 
 .card.shatb .wm { color: var(--shatb-wm); border: 1.5px solid var(--shatb-wm); }
 .card.ohda .wm { color: var(--ohda-wm); border: 1.5px solid var(--ohda-wm); }
+
+body.theme-ledger .card.shatb .wm { outline: 1.5px solid var(--shatb-wm); outline-offset: 5px; }
+body.theme-ledger .card.ohda .wm { outline: 1.5px solid var(--ohda-wm); outline-offset: 5px; }
+
+body.theme-seal .card.shatb .wm { border: none; box-shadow: 0 0 0 2px var(--shatb-wm) inset, 0 0 26px var(--shatb-wm); }
+body.theme-seal .card.ohda .wm { border: none; box-shadow: 0 0 0 2px var(--ohda-wm) inset, 0 0 26px var(--ohda-wm); }
+
+body.theme-desert .card.shatb .wm { border: none; background: radial-gradient(circle at 35% 30%, var(--shatb-wm), transparent 72%); }
+body.theme-desert .card.ohda .wm { border: none; background: radial-gradient(circle at 35% 30%, var(--ohda-wm), transparent 72%); }
 
 .header {
     display: flex;
@@ -372,6 +370,7 @@ body.theme-noir .theme-indicator {
 }
 
 .main-text {
+    font-family: var(--font-display), 'Amiri', serif;
     font-size: 44pt;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
@@ -380,6 +379,11 @@ body.theme-noir .theme-indicator {
     text-align: center;
     line-height: 1;
 }
+
+body.theme-ledger .main-text { font-size: 41pt; }
+body.theme-seal .main-text { font-size: 37pt; letter-spacing: 0; }
+body.theme-desert .main-text { font-size: 42pt; }
+body.theme-pearl .main-text { font-size: 39pt; }
 
 .footer-wrapper {
     display: flex;
@@ -425,6 +429,25 @@ body.theme-noir .theme-indicator {
     letter-spacing: 0;
     white-space: nowrap;
 }
+
+.editable {
+    cursor: text;
+    border-radius: 6px;
+    transition: background 0.15s var(--ease-out);
+}
+.editable:hover { background: rgba(0,0,0,0.06); }
+body.theme-seal .editable:hover { background: rgba(255,255,255,0.09); }
+
+.inline-edit-input {
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0.05);
+    border-radius: 6px;
+    padding: 0 4px;
+    font-family: inherit;
+}
+body.theme-seal .inline-edit-input { background: rgba(255,255,255,0.10); }
+.inline-edit-input:focus { box-shadow: 0 0 0 2px var(--panel-accent); }
 
 .fab {
     position: fixed;
@@ -492,6 +515,7 @@ body.theme-noir .theme-indicator {
     justify-content: space-between;
     padding: 20px 22px;
     border-bottom: 1px solid var(--panel-line);
+    flex-shrink: 0;
 }
 .panel-title { font-size: 12.5pt; font-weight: 700; }
 .panel-close {
@@ -505,10 +529,10 @@ body.theme-noir .theme-indicator {
 .panel-body {
     flex: 1;
     overflow-y: auto;
-    padding: 20px 22px 100px;
+    padding: 20px 22px 220px;
 }
 
-.panel-section { margin-bottom: 26px; }
+.panel-section { margin-bottom: 18px; }
 .panel-section-title {
     font-size: 8.5pt;
     font-weight: 700;
@@ -518,81 +542,107 @@ body.theme-noir .theme-indicator {
     margin-bottom: 12px;
 }
 
-.field { margin-bottom: 10px; }
-.field label {
-    display: block;
-    font-size: 8pt;
+.panel-hint {
+    font-size: 8.3pt;
     font-weight: 600;
     color: var(--panel-muted);
-    margin-bottom: 5px;
+    background: var(--panel-field);
+    padding: 12px 14px;
+    border-radius: 14px;
+    line-height: 1.7;
 }
-.field input[type="text"], .field input[type="number"] {
-    width: 100%;
-    padding: 9px 12px;
-    border-radius: 12px;
+
+.quick-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+.quick-filters button {
+    padding: 6px 13px;
+    border-radius: 100px;
     border: 1px solid var(--panel-line);
     background: var(--panel-field);
     color: var(--panel-ink);
     font-family: inherit;
-    font-size: 9.5pt;
-    outline: none;
-    transition: border-color 0.15s;
-}
-.field input:focus { border-color: var(--panel-accent); }
-
-.card-row {
-    border: 1px solid var(--panel-line);
-    border-radius: 16px;
-    padding: 14px;
-    margin-bottom: 12px;
-    background: var(--panel-field);
-}
-.card-row-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-.type-toggle {
-    display: flex;
-    border-radius: 100px;
-    background: rgba(0,0,0,0.06);
-    padding: 3px;
-    gap: 2px;
-}
-.type-toggle button {
-    border: none;
-    background: transparent;
-    padding: 5px 12px;
-    border-radius: 100px;
-    font-family: inherit;
     font-size: 7.8pt;
     font-weight: 700;
     cursor: pointer;
-    color: var(--panel-muted);
-}
-.type-toggle button.active.shatb-a { background: #D31E49; color: #fff; }
-.type-toggle button.active.ohda-a { background: #1547D6; color: #fff; }
-
-.row-actions { display: flex; gap: 4px; }
-.row-actions button {
-    width: 26px; height: 26px; border-radius: 8px; border: none;
-    background: transparent; color: var(--panel-muted); cursor: pointer;
-    font-size: 11px; display: flex; align-items: center; justify-content: center;
     transition: background 0.15s;
 }
-.row-actions button:hover { background: rgba(0,0,0,0.08); }
+.quick-filters button:hover { background: var(--panel-line); }
 
-.check-row {
+.card-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.card-row-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 8px;
-    font-size: 8pt;
-    font-weight: 600;
-    color: var(--panel-muted);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid var(--panel-line);
+    background: var(--panel-field);
+    cursor: pointer;
+    transition: border-color 0.15s, opacity 0.15s;
 }
-.check-row input { accent-color: var(--panel-accent); }
+.card-row-item.selected { border-color: var(--panel-accent); box-shadow: inset 0 0 0 1px var(--panel-accent); }
+.card-row-item.dragging { opacity: 0.4; }
+.card-row-item.drag-over { border-style: dashed; border-color: var(--panel-accent); }
+
+.drag-handle {
+    cursor: grab;
+    color: var(--panel-muted);
+    font-size: 12px;
+    line-height: 1;
+    user-select: none;
+    letter-spacing: -2px;
+    flex-shrink: 0;
+}
+
+.row-type-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    padding: 0;
+}
+.row-type-dot.shatb { background: var(--shatb-accent); }
+.row-type-dot.ohda { background: var(--ohda-accent); }
+
+.row-text { flex: 1; min-width: 0; }
+.row-center-preview {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--panel-ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.row-footer-preview {
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: var(--panel-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.row-icon-actions { display: flex; gap: 2px; flex-shrink: 0; }
+.row-icon-actions button {
+    width: 24px; height: 24px; border-radius: 8px; border: none;
+    background: transparent; color: var(--panel-muted); cursor: pointer;
+    font-size: 11px; display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+.row-icon-actions button:hover { background: var(--panel-line); color: var(--panel-ink); }
+.row-line-btn.active { color: var(--panel-accent); font-weight: 900; }
 
 .add-card-btn {
     width: 100%;
@@ -609,73 +659,58 @@ body.theme-noir .theme-indicator {
 }
 .add-card-btn:hover { border-color: var(--panel-accent); color: var(--panel-accent); background: rgba(0,0,0,0.02); }
 
-.sel-check { margin-left: 4px; accent-color: var(--panel-accent); }
-.card-row-left { display: flex; align-items: center; gap: 8px; }
-
-.bulk-box {
-    border: 1px solid var(--panel-line);
-    border-radius: 16px;
-    padding: 14px;
-    background: var(--panel-field);
-}
-.bulk-select-actions {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-.bulk-select-actions button {
-    flex: 1;
-    padding: 7px 8px;
-    border-radius: 10px;
-    border: 1px solid var(--panel-line);
+.batch-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: var(--panel-bg);
-    color: var(--panel-ink);
-    font-family: inherit;
-    font-size: 7.8pt;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.15s;
+    border-top: 1px solid var(--panel-line);
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s var(--ease-out), opacity 0.25s, padding 0.3s;
 }
-.bulk-select-actions button:hover { background: var(--panel-line); }
-.bulk-count {
-    font-size: 7.8pt;
-    font-weight: 700;
-    color: var(--panel-accent);
-    margin-bottom: 12px;
+.batch-bar.active {
+    max-height: 280px;
+    opacity: 1;
+    padding: 16px 18px;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.10);
 }
-.field select {
-    width: 100%;
-    padding: 9px 12px;
-    border-radius: 12px;
-    border: 1px solid var(--panel-line);
-    background: var(--panel-bg);
-    color: var(--panel-ink);
-    font-family: inherit;
-    font-size: 9.5pt;
-    outline: none;
-    cursor: pointer;
+.batch-count { font-size: 8pt; font-weight: 800; color: var(--panel-accent); margin-bottom: 10px; }
+.batch-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.batch-row:last-child { margin-bottom: 0; }
+.batch-row .type-toggle { flex: 1; display: flex; gap: 8px; }
+.batch-type-btn, .batch-line-btn {
+    flex: 1; border: none; background: var(--panel-field); padding: 8px 6px;
+    border-radius: 10px; font-family: inherit; font-size: 7.6pt; font-weight: 700;
+    color: var(--panel-ink); cursor: pointer; transition: background 0.15s;
 }
-.bulk-apply-btn {
-    width: 100%;
-    padding: 11px;
-    border-radius: 12px;
-    border: none;
-    background: var(--panel-accent);
-    color: #fff;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 9pt;
-    cursor: pointer;
-    margin-top: 4px;
-    transition: filter 0.15s;
+.batch-type-btn:hover, .batch-line-btn:hover { background: var(--panel-line); }
+.batch-row input[type="text"] {
+    flex: 1; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--panel-line);
+    background: var(--panel-field); color: var(--panel-ink); font-family: inherit;
+    font-size: 8.5pt; outline: none;
 }
-.bulk-apply-btn:hover { filter: brightness(1.08); }
+#batchFooterApply {
+    border: none; background: var(--panel-accent); color: #fff; padding: 8px 16px;
+    border-radius: 10px; font-family: inherit; font-weight: 700; font-size: 8pt; cursor: pointer;
+}
+.batch-action {
+    flex: 1; border: none; padding: 9px; border-radius: 10px; font-family: inherit;
+    font-weight: 700; font-size: 8pt; cursor: pointer; background: var(--panel-field); color: var(--panel-ink);
+}
+.batch-action:hover { background: var(--panel-line); }
+.batch-action.danger { background: rgba(211,30,73,0.12); color: #B01A3E; }
+body.theme-seal .batch-action.danger { background: rgba(255,90,110,0.18); color: #FF8FA3; }
 
 @media print {
     @page { size: 297mm 210mm; margin: 0; }
     html, body { width: 297mm; height: auto; margin: 0; padding: 0; }
     body { background: #ffffff; gap: 0; display: block; }
     .no-print { display: none !important; }
+    .editable:hover { background: none !important; }
     .page {
         width: 297mm; height: 210mm; margin: 0; border: 0; border-radius: 0;
         box-shadow: none; page-break-after: always; break-after: page;
@@ -686,28 +721,28 @@ body.theme-noir .theme-indicator {
 }
 </style>
 </head>
-<body class="theme-vivid">
+<body class="theme-ledger">
 
 <div class="theme-switcher no-print">
 <div class="theme-indicator"></div>
-<button class="theme-btn active" onclick="setTheme('theme-vivid', this)">Vivid</button>
-<button class="theme-btn" onclick="setTheme('theme-air', this)">Air</button>
-<button class="theme-btn" onclick="setTheme('theme-dusk', this)">Dusk</button>
-<button class="theme-btn" onclick="setTheme('theme-terra', this)">Terra</button>
-<button class="theme-btn" onclick="setTheme('theme-noir', this)">Noir</button>
+<button class="theme-btn active" onclick="setTheme('theme-ledger', this)">دفتري</button>
+<button class="theme-btn" onclick="setTheme('theme-seal', this)">ختم</button>
+<button class="theme-btn" onclick="setTheme('theme-desert', this)">صحراء</button>
+<button class="theme-btn" onclick="setTheme('theme-pearl', this)">لؤلؤي</button>
 </div>
 
-<button class="fab no-print" id="fabBtn" title="تحرير البيانات">
-<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+<button class="fab no-print" id="fabBtn" title="تنظيم البطاقات">
+<svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
 </button>
-<button class="btn-print no-print" onclick="window.print()">طباعة</button>
+<button class="btn-print no-print" id="printBtn">طباعة</button>
 
 <div class="panel no-print" id="panel">
 <div class="panel-head">
-<div class="panel-title">تحرير البطاقات</div>
+<div class="panel-title">تنظيم البطاقات</div>
 <button class="panel-close" id="panelClose">✕</button>
 </div>
 <div class="panel-body" id="panelBody"></div>
+<div class="batch-bar" id="batchBar"></div>
 </div>
 
 <div id="pagesRoot"></div>
@@ -740,33 +775,37 @@ const state = {
     ]
 };
 
+let dragSrcIdx = null;
+
 function escapeHTML(s) {
     return String(s).replace(/[&<>"']/g, c => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[c]));
 }
 
-function cardHTML(item) {
+function cardHTML(item, idx) {
     const wm = item.type === "shatb" ? "ش" : "ع";
     return `
     <div class="card ${item.type}">
         <div class="wm">${wm}</div>
         <div class="header">
             <div class="org-stack">
-                ${state.org.map(l => `<div class="org-item">${escapeHTML(l)}</div>`).join("")}
+                <div class="org-item editable" data-field="orgLine" data-line="0">${escapeHTML(state.org[0])}</div>
+                <div class="org-item editable" data-field="orgLine" data-line="1">${escapeHTML(state.org[1])}</div>
+                <div class="org-item editable" data-field="orgLine" data-line="2">${escapeHTML(state.org[2])}</div>
             </div>
             <div class="header-id">
-                <div class="pharmacy-name">${escapeHTML(state.pharmacyName)}</div>
-                <div class="pharmacy-number">${escapeHTML(state.pharmacyNumber)}</div>
+                <div class="pharmacy-name editable" data-field="pharmacyName">${escapeHTML(state.pharmacyName)}</div>
+                <div class="pharmacy-number editable" data-field="pharmacyNumber">${escapeHTML(state.pharmacyNumber)}</div>
             </div>
         </div>
         <div class="center-content">
-            <div class="main-text">${escapeHTML(item.center)}</div>
+            <div class="main-text editable" data-field="center" data-idx="${idx}">${escapeHTML(item.center)}</div>
         </div>
         <div class="footer-wrapper ${item.hasLine ? "has-line" : ""}">
             <div class="footer-line"></div>
-            <div class="footer-text">${escapeHTML(item.footer)}</div>
-            <div class="fiscal-year">${escapeHTML(state.fiscalYear)}</div>
+            <div class="footer-text editable" data-field="footer" data-idx="${idx}">${escapeHTML(item.footer)}</div>
+            <div class="fiscal-year editable" data-field="fiscalYear">${escapeHTML(state.fiscalYear)}</div>
         </div>
     </div>`;
 }
@@ -778,147 +817,254 @@ function renderPages() {
     for (let i = 0; i < state.cards.length; i += 4) {
         const page = document.createElement("div");
         page.className = "page";
-        state.cards.slice(i, i + 4).forEach(item => {
-            page.insertAdjacentHTML("beforeend", cardHTML(item));
+        const group = state.cards.slice(i, i + 4);
+        group.forEach((item, j) => {
+            page.insertAdjacentHTML("beforeend", cardHTML(item, i + j));
         });
         fragment.appendChild(page);
     }
     root.appendChild(fragment);
 }
 
+function getFieldValue(field, idx, line) {
+    if (field === 'orgLine') return state.org[line];
+    if (field === 'pharmacyName') return state.pharmacyName;
+    if (field === 'pharmacyNumber') return state.pharmacyNumber;
+    if (field === 'fiscalYear') return state.fiscalYear;
+    if (field === 'center') return state.cards[idx].center;
+    if (field === 'footer') return state.cards[idx].footer;
+    return "";
+}
+
+function setFieldValue(field, idx, line, val) {
+    if (field === 'orgLine') state.org[line] = val;
+    else if (field === 'pharmacyName') state.pharmacyName = val;
+    else if (field === 'pharmacyNumber') state.pharmacyNumber = val;
+    else if (field === 'fiscalYear') state.fiscalYear = val;
+    else if (field === 'center') state.cards[idx].center = val;
+    else if (field === 'footer') state.cards[idx].footer = val;
+}
+
+function beginEdit(el) {
+    const field = el.dataset.field;
+    const idx = el.dataset.idx !== undefined ? +el.dataset.idx : null;
+    const line = el.dataset.line !== undefined ? +el.dataset.line : null;
+    const current = getFieldValue(field, idx, line);
+    const cs = getComputedStyle(el);
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = current;
+    input.className = 'inline-edit-input';
+    input.style.fontFamily = cs.fontFamily;
+    input.style.fontSize = cs.fontSize;
+    input.style.fontWeight = cs.fontWeight;
+    input.style.color = cs.color;
+    input.style.textAlign = cs.textAlign;
+    input.style.letterSpacing = cs.letterSpacing;
+    input.style.direction = 'rtl';
+    input.style.width = Math.max(el.offsetWidth + 24, 48) + 'px';
+
+    const commit = () => {
+        setFieldValue(field, idx, line, input.value);
+        renderPages();
+        if (document.getElementById('panel').classList.contains('open')) renderPanel();
+    };
+
+    input.addEventListener('blur', commit, { once: true });
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            input.blur();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            input.removeEventListener('blur', commit);
+            renderPages();
+        }
+    });
+
+    el.replaceWith(input);
+    input.focus();
+    input.select();
+}
+
+function updateBatchBar() {
+    const bar = document.getElementById('batchBar');
+    const sel = state.cards.filter(c => c.selected);
+    if (sel.length === 0) {
+        bar.classList.remove('active');
+        bar.innerHTML = '';
+        return;
+    }
+    bar.classList.add('active');
+    bar.innerHTML = `
+        <div class="batch-count">${sel.length} بطاقة محددة</div>
+        <div class="batch-row">
+            <div class="type-toggle">
+                <button type="button" class="batch-type-btn" data-type="shatb">تحويل لشطب</button>
+                <button type="button" class="batch-type-btn" data-type="ohda">تحويل لعهدة</button>
+            </div>
+        </div>
+        <div class="batch-row">
+            <div class="type-toggle">
+                <button type="button" class="batch-line-btn" data-line="show">إظهار الخط</button>
+                <button type="button" class="batch-line-btn" data-line="hide">إخفاء الخط</button>
+            </div>
+        </div>
+        <div class="batch-row">
+            <input type="text" id="batchFooterInput" placeholder="نص أسفل البطاقة للمحدد">
+            <button type="button" id="batchFooterApply">تطبيق</button>
+        </div>
+        <div class="batch-row">
+            <button type="button" class="batch-action" id="batchDuplicate">تكرار المحدد</button>
+            <button type="button" class="batch-action danger" id="batchDelete">حذف المحدد</button>
+        </div>
+    `;
+
+    bar.querySelectorAll('.batch-type-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            state.cards.forEach(c => { if (c.selected) c.type = btn.dataset.type; });
+            renderPanel();
+            renderPages();
+        });
+    });
+    bar.querySelectorAll('.batch-line-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const show = btn.dataset.line === 'show';
+            state.cards.forEach(c => { if (c.selected) c.hasLine = show; });
+            renderPanel();
+            renderPages();
+        });
+    });
+    const applyFooter = () => {
+        const val = document.getElementById('batchFooterInput').value;
+        if (!val) return;
+        state.cards.forEach(c => { if (c.selected) c.footer = val; });
+        renderPanel();
+        renderPages();
+    };
+    document.getElementById('batchFooterApply').addEventListener('click', applyFooter);
+    document.getElementById('batchFooterInput').addEventListener('keydown', e => {
+        if (e.key === 'Enter') { e.preventDefault(); applyFooter(); }
+    });
+    document.getElementById('batchDuplicate').addEventListener('click', () => {
+        const next = [];
+        state.cards.forEach(c => {
+            next.push(c);
+            if (c.selected) next.push(Object.assign({}, c, { selected: false }));
+        });
+        state.cards.forEach(c => c.selected = false);
+        state.cards = next;
+        renderPanel();
+        renderPages();
+    });
+    document.getElementById('batchDelete').addEventListener('click', () => {
+        state.cards = state.cards.filter(c => !c.selected);
+        renderPanel();
+        renderPages();
+    });
+}
+
 function renderPanel() {
     const body = document.getElementById('panelBody');
-    let html = `
-    <div class="panel-section">
-        <div class="panel-section-title">بيانات عامة</div>
-        <div class="field"><label>السطر الأول</label><input type="text" id="orgLine0" value="${escapeHTML(state.org[0])}"></div>
-        <div class="field"><label>السطر الثاني</label><input type="text" id="orgLine1" value="${escapeHTML(state.org[1])}"></div>
-        <div class="field"><label>السطر الثالث</label><input type="text" id="orgLine2" value="${escapeHTML(state.org[2])}"></div>
-        <div class="field"><label>اسم الصيدلية</label><input type="text" id="pharmacyName" value="${escapeHTML(state.pharmacyName)}"></div>
-        <div class="field"><label>رقم الصيدلية</label><input type="text" id="pharmacyNumber" value="${escapeHTML(state.pharmacyNumber)}"></div>
-        <div class="field"><label>العام المالي</label><input type="text" id="fiscalYear" value="${escapeHTML(state.fiscalYear)}"></div>
-    </div>
-    <div class="panel-section">
-        <div class="panel-section-title">تحرير جماعي</div>
-        <div class="bulk-box">
-            <div class="bulk-select-actions">
-                <button id="selectAllBtn" type="button">تحديد الكل</button>
-                <button id="selectNoneBtn" type="button">إلغاء التحديد</button>
-            </div>
-            <div class="bulk-count">${state.cards.filter(c => c.selected).length} بطاقة محددة</div>
-            <div class="field">
-                <label>النوع</label>
-                <select id="bulkType">
-                    <option value="">بدون تغيير</option>
-                    <option value="shatb">شطب</option>
-                    <option value="ohda">عهدة</option>
-                </select>
-            </div>
-            <div class="field">
-                <label>نص أسفل البطاقة</label>
-                <input type="text" id="bulkFooter" placeholder="اتركه فارغاً لعدم التغيير">
-            </div>
-            <div class="field">
-                <label>الخط الفاصل</label>
-                <select id="bulkLine">
-                    <option value="">بدون تغيير</option>
-                    <option value="show">إظهار</option>
-                    <option value="hide">إخفاء</option>
-                </select>
-            </div>
-            <button class="bulk-apply-btn" id="applyBulkBtn">تطبيق على المحدد</button>
+    body.innerHTML = `
+        <div class="panel-section">
+            <div class="panel-hint">انقر على أي نص داخل البطاقة لتعديله مباشرة</div>
         </div>
-    </div>
-    <div class="panel-section">
-        <div class="panel-section-title">البطاقات (${state.cards.length})</div>
-        <div id="cardRows"></div>
-        <button class="add-card-btn" id="addCardBtn">+ إضافة بطاقة</button>
-    </div>`;
-    body.innerHTML = html;
+        <div class="panel-section">
+            <div class="panel-section-title">تنظيم البطاقات (${state.cards.length})</div>
+            <div class="quick-filters">
+                <button type="button" data-q="all">تحديد الكل</button>
+                <button type="button" data-q="shatb">شطب فقط</button>
+                <button type="button" data-q="ohda">عهدة فقط</button>
+                <button type="button" data-q="none">إلغاء التحديد</button>
+            </div>
+            <div class="card-rows" id="cardRows"></div>
+            <button class="add-card-btn" id="addCardBtn" type="button">+ إضافة بطاقة</button>
+        </div>
+    `;
 
     const rowsHost = document.getElementById('cardRows');
     state.cards.forEach((item, idx) => {
         const row = document.createElement('div');
-        row.className = 'card-row';
+        row.className = 'card-row-item' + (item.selected ? ' selected' : '');
+        row.draggable = true;
+        row.dataset.idx = idx;
         row.innerHTML = `
-            <div class="card-row-top">
-                <div class="card-row-left">
-                    <input type="checkbox" class="sel-check" data-idx="${idx}" ${item.selected ? 'checked' : ''} title="تحديد للتحرير الجماعي">
-                    <div class="type-toggle">
-                        <button data-idx="${idx}" class="type-btn ${item.type === 'shatb' ? 'active shatb-a' : ''}" data-type="shatb">شطب</button>
-                        <button data-idx="${idx}" class="type-btn ${item.type === 'ohda' ? 'active ohda-a' : ''}" data-type="ohda">عهدة</button>
-                    </div>
-                </div>
-                <div class="row-actions">
-                    <button data-idx="${idx}" class="up-btn" title="أعلى">↑</button>
-                    <button data-idx="${idx}" class="down-btn" title="أسفل">↓</button>
-                    <button data-idx="${idx}" class="del-btn" title="حذف">✕</button>
-                </div>
+            <span class="drag-handle">⋮⋮</span>
+            <button type="button" class="row-type-dot ${item.type}" title="تبديل النوع"></button>
+            <div class="row-text">
+                <div class="row-center-preview">${escapeHTML(item.center) || 'بدون نص'}</div>
+                <div class="row-footer-preview">${escapeHTML(item.footer)}</div>
             </div>
-            <div class="field"><label>النص المركزي</label><input type="text" class="center-input" data-idx="${idx}" value="${escapeHTML(item.center)}"></div>
-            <div class="field"><label>نص أسفل البطاقة</label><input type="text" class="footer-input" data-idx="${idx}" value="${escapeHTML(item.footer)}"></div>
-            <div class="check-row">
-                <input type="checkbox" class="line-check" data-idx="${idx}" ${item.hasLine ? 'checked' : ''}>
-                <span>إظهار خط فاصل</span>
+            <div class="row-icon-actions">
+                <button type="button" class="row-line-btn ${item.hasLine ? 'active' : ''}" title="خط فاصل">―</button>
+                <button type="button" class="row-dup-btn" title="تكرار">⧉</button>
+                <button type="button" class="row-del-btn" title="حذف">✕</button>
             </div>
         `;
         rowsHost.appendChild(row);
-    });
 
-    document.getElementById('orgLine0').addEventListener('input', e => { state.org[0] = e.target.value; renderPages(); });
-    document.getElementById('orgLine1').addEventListener('input', e => { state.org[1] = e.target.value; renderPages(); });
-    document.getElementById('orgLine2').addEventListener('input', e => { state.org[2] = e.target.value; renderPages(); });
-    document.getElementById('pharmacyName').addEventListener('input', e => { state.pharmacyName = e.target.value; renderPages(); });
-    document.getElementById('pharmacyNumber').addEventListener('input', e => { state.pharmacyNumber = e.target.value; renderPages(); });
-    document.getElementById('fiscalYear').addEventListener('input', e => { state.fiscalYear = e.target.value; renderPages(); });
-
-    rowsHost.querySelectorAll('.type-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const idx = +btn.dataset.idx;
-            state.cards[idx].type = btn.dataset.type;
+        row.addEventListener('click', e => {
+            if (e.target.closest('button')) return;
+            state.cards[idx].selected = !state.cards[idx].selected;
+            renderPanel();
+        });
+        row.addEventListener('dragstart', () => {
+            dragSrcIdx = idx;
+            row.classList.add('dragging');
+        });
+        row.addEventListener('dragend', () => {
+            dragSrcIdx = null;
+            document.querySelectorAll('.card-row-item').forEach(r => r.classList.remove('dragging', 'drag-over'));
+        });
+        row.addEventListener('dragover', e => {
+            e.preventDefault();
+            row.classList.add('drag-over');
+        });
+        row.addEventListener('dragleave', () => row.classList.remove('drag-over'));
+        row.addEventListener('drop', e => {
+            e.preventDefault();
+            row.classList.remove('drag-over');
+            if (dragSrcIdx === null || dragSrcIdx === idx) return;
+            const [moved] = state.cards.splice(dragSrcIdx, 1);
+            state.cards.splice(idx, 0, moved);
+            dragSrcIdx = null;
             renderPanel();
             renderPages();
         });
-    });
-    rowsHost.querySelectorAll('.center-input').forEach(inp => {
-        inp.addEventListener('input', () => { state.cards[+inp.dataset.idx].center = inp.value; renderPages(); });
-    });
-    rowsHost.querySelectorAll('.footer-input').forEach(inp => {
-        inp.addEventListener('input', () => { state.cards[+inp.dataset.idx].footer = inp.value; renderPages(); });
-    });
-    rowsHost.querySelectorAll('.line-check').forEach(inp => {
-        inp.addEventListener('change', () => { state.cards[+inp.dataset.idx].hasLine = inp.checked; renderPages(); });
-    });
-    rowsHost.querySelectorAll('.up-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const idx = +btn.dataset.idx;
-            if (idx === 0) return;
-            [state.cards[idx - 1], state.cards[idx]] = [state.cards[idx], state.cards[idx - 1]];
+        row.querySelector('.row-type-dot').addEventListener('click', e => {
+            e.stopPropagation();
+            state.cards[idx].type = state.cards[idx].type === 'shatb' ? 'ohda' : 'shatb';
             renderPanel();
             renderPages();
         });
-    });
-    rowsHost.querySelectorAll('.down-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const idx = +btn.dataset.idx;
-            if (idx === state.cards.length - 1) return;
-            [state.cards[idx + 1], state.cards[idx]] = [state.cards[idx], state.cards[idx + 1]];
+        row.querySelector('.row-line-btn').addEventListener('click', e => {
+            e.stopPropagation();
+            state.cards[idx].hasLine = !state.cards[idx].hasLine;
             renderPanel();
             renderPages();
         });
-    });
-    rowsHost.querySelectorAll('.del-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const idx = +btn.dataset.idx;
+        row.querySelector('.row-dup-btn').addEventListener('click', e => {
+            e.stopPropagation();
+            const copy = Object.assign({}, state.cards[idx], { selected: false });
+            state.cards.splice(idx + 1, 0, copy);
+            renderPanel();
+            renderPages();
+        });
+        row.querySelector('.row-del-btn').addEventListener('click', e => {
+            e.stopPropagation();
             state.cards.splice(idx, 1);
             renderPanel();
             renderPages();
         });
     });
 
-    rowsHost.querySelectorAll('.sel-check').forEach(inp => {
-        inp.addEventListener('change', () => {
-            state.cards[+inp.dataset.idx].selected = inp.checked;
+    document.querySelectorAll('.quick-filters button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const q = btn.dataset.q;
+            if (q === 'all') state.cards.forEach(c => c.selected = true);
+            else if (q === 'none') state.cards.forEach(c => c.selected = false);
+            else state.cards.forEach(c => c.selected = c.type === q);
             renderPanel();
         });
     });
@@ -929,29 +1075,7 @@ function renderPanel() {
         renderPages();
     });
 
-    document.getElementById('selectAllBtn').addEventListener('click', () => {
-        state.cards.forEach(c => c.selected = true);
-        renderPanel();
-    });
-    document.getElementById('selectNoneBtn').addEventListener('click', () => {
-        state.cards.forEach(c => c.selected = false);
-        renderPanel();
-    });
-    document.getElementById('applyBulkBtn').addEventListener('click', () => {
-        const type = document.getElementById('bulkType').value;
-        const footer = document.getElementById('bulkFooter').value;
-        const line = document.getElementById('bulkLine').value;
-        const targets = state.cards.filter(c => c.selected);
-        if (targets.length === 0) return;
-        targets.forEach(c => {
-            if (type) c.type = type;
-            if (footer) c.footer = footer;
-            if (line === 'show') c.hasLine = true;
-            if (line === 'hide') c.hasLine = false;
-        });
-        renderPanel();
-        renderPages();
-    });
+    updateBatchBar();
 }
 
 function moveIndicator(btn) {
@@ -977,6 +1101,17 @@ document.getElementById('fabBtn').addEventListener('click', () => {
 });
 document.getElementById('panelClose').addEventListener('click', () => {
     document.getElementById('panel').classList.remove('open');
+});
+document.getElementById('printBtn').addEventListener('click', () => {
+    if (document.activeElement && document.activeElement.classList.contains('inline-edit-input')) {
+        document.activeElement.blur();
+    }
+    window.print();
+});
+document.getElementById('pagesRoot').addEventListener('click', e => {
+    const el = e.target.closest('.editable');
+    if (!el) return;
+    beginEdit(el);
 });
 
 renderPages();
